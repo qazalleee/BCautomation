@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NewInvoiceIssuanceProcess" verbose="1" parallel="tests">
+    <parameter name="url" value="https://eproc4test.setadiran.ir/eproc4test/entry.do"/>
+    <!--<parameter name="url" value="https://172.26.37.65:9443/eproc4ContractTwo/entry.do"/>-->
+    <parameter name="os" value="windows"/>
+    <parameter name="node" value="http://172.20.160.57:4444"/>
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="Tests on Firefox 66" preserve-order="true" group-by-instances="true">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="browserVersion" value="66"/>
+        <groups>
+            <run>
+                <include name="INVOICE"/>
+            </run>
+
+        </groups>
+        <classes>
+            <class name="com.behsazan.test.invoice.TestQueries"/>
+        </classes>
+    </test>
+</suite>

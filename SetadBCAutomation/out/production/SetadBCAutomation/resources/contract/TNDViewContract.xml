@@ -1,0 +1,47 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TNDCreateProcess AUT" verbose="1"  parallel="tests"><!--parallel="tests"-->
+    <parameter name="url" value="https://etend4test.setadiran.ir/etend4test/index.action"/>
+    <parameter name="os" value="windows"/>
+    <parameter name="node" value="http://172.20.160.17:4444"/>
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+
+    <test name="Tests on Firefox 60" preserve-order="true" group-by-instances="true">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="browserVersion" value="60"/>
+        <groups>
+            <run>
+                <!--        <exclude name="SUPPLIER"/>-->
+                <include name="BUYER"/>
+                <include name="ALL"/>
+                <include name="VIEW"/>
+            </run>
+
+        </groups>
+        <classes>
+            <class name="com.behsazan.test.tnd.TestTndHomePage"/>
+            <class name="com.behsazan.test.tnd.TNDTestLoginPage">
+                <methods>
+                    <parameter name="loginType"  value="buyerLogin"/>
+                </methods>
+            </class>
+            <class name="com.behsazan.test.tnd.TestTNDCartableClick">
+                <methods>
+
+                    <parameter name="ClickName" value="CONTRACT_MANAGMENT"/>
+                </methods>
+            </class>
+            <class name="com.behsazan.test.contract.TestContractCartablePage"/>
+            <class name="com.behsazan.test.contract.TestContract"/>
+
+
+        </classes>
+    </test>
+
+
+</suite>

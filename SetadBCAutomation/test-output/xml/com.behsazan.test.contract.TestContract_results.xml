@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Tests on Firefox 66"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="16.353">
+  <properties />
+  
+  
+            <testcase name="ContractEdit" time="16.353" classname="com.behsazan.test.contract.TestContract" />
+                <testcase name="initSignDDL" time="0.000" classname="com.behsazan.test.contract.TestContract" />
+      
+</testsuite>

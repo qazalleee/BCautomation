@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NewInvoiceIssuanceProcess" verbose="1" parallel="tests">
+    <parameter name="url" value="https://eproc4test.setadiran.ir/eproc4test/entry.do"/>
+    <!--<parameter name="url" value="https://172.26.37.65:9443/eproc4ContractTwo/entry.do"/>-->
+    <parameter name="os" value="windows"/>
+    <parameter name="node" value="http://172.20.160.54:4444"/>
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter" />
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+    </listeners>
+
+    <test name="Tests on Firefox 66" preserve-order="true" group-by-instances="true">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="browserVersion" value="66"/>
+        <groups>
+            <run>
+                <include name="BUYER"/>
+                <include name="LOGIN"/>
+                <include name="CONTRACT"/>
+                <include name="EDITION"/>
+
+            </run>
+
+        </groups>
+        <classes>
+            <class name="com.behsazan.test.prc.TestPrcHomePage"/>
+            <class name="com.behsazan.test.prc.TestPrcLoginPage">
+                <methods>
+                    <parameter name="loginType" value="maghamLogin"/>
+                </methods>
+            </class>
+
+            <class name="com.behsazan.test.prc.TestAfterLoginMainPage">
+
+            </class>
+
+            <class name="com.behsazan.test.contract.TestContractCartablePage"/>
+            <class name="com.behsazan.test.contract.TestContract"/>
+
+
+        </classes>
+    </test>
+</suite>
