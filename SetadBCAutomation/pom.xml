@@ -82,9 +82,15 @@
         </dependency>
 
 </dependencies>
-         
+
+
          
         <build>
+            <testResources>
+                <testResource>
+                    <directory>src\main\java\com\behsazan\test</directory>
+                </testResource>
+            </testResources>
             <resources>
                 <resource>
                     <directory>src\main\java\resources</directory>
@@ -104,14 +110,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
-
-                    <!-- Old design where we can hard code TestNG suite in pom.xml -->
-<!--                      <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
-
-                    </suiteXmlFiles>  -->
-
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>src/main/java/resources/invoice/NewInvoiceIssuanceProcess.xml</suiteXmlFile>
+                        </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
