@@ -24,14 +24,14 @@
 
         </groups>
         <classes>
-            <class name="com.behsazan.test.prc.TestPrcHomePage"/>
-           <class name="com.behsazan.test.prc.TestPrcLoginPage">
+            <class name="BCautomation.SetadBCAutomation.src.main.java.com.behsazan.test.prc.TestPrcHomePage"/>
+           <class name="BCautomation.SetadBCAutomation.src.main.java.com.behsazan.test.prc.TestPrcLoginPage">
                 <methods>
                     <parameter name="loginType" value="supplierLogin"/>
                 </methods>
             </class>
 
-            <class name="com.behsazan.test.prc.TestAfterLoginMainPage">
+            <class name="BCautomation.SetadBCAutomation.src.main.java.com.behsazan.test.prc.TestAfterLoginMainPage">
               <!--  <methods>
                     <parameter name="ClickName" value="INVOICE"/>
                 </methods>-->
